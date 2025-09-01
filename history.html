@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Astrid Valladares">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+</head>
+<nav>
+		<ul>
+		<li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History & Background</a></li>
+        <li><a href="popCulture.html">Pop Culture</a></li>
+        <li><a href="technology.html">Technology</a></li>
+		<li><a href="conclusion.html">Conclusion</a></li>
+      </ul>
+	</nav>
+  
+<style>	
+		#map{
+			width: auto; 
+			height: 400px
+		}
+</style>
+
+  <div id="map"></div>
+	<script>
+var map = L.map('map').setView([51.505, -0.09], 13);
+	
+	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);	
+		
+	map.setView(new L.LatLng(35.9078, 127.7669), 6);
+
+var Seoul = L.marker([37.5503, 126.9971]).bindPopup('Seoul, South Korea'),
+	Busan = L.marker([35.1731, 129.0714]).bindPopup('Busan, South Korea.');
+			
+var cities = L.layerGroup([Seoul, Busan]);			
+			
+var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+});
+			
+var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France'});
+
+		
+var baseMaps = {
+    "OpenStreetMap": osm,
+    "OpenStreetMap.HOT": osmHOT,
+};
+
+var overlayMaps = {
+    "Cities": cities
+};
+
+L.control.layers(baseMaps, overlayMaps).addTo(map);
+ 
+layerControl.addBaseLayer(openTopoMap, "OpenTopoMap");
+layerControl.addOverlay(favorites, "Favortite Cities");
+	</script>
+<!--INTRO-->
+		</div>
+<!--BACKSTORY-->
+ <div class="grid-item">
+    <div class="card">
+      <h2>Breif History of the Imjin War</h2>
+      <h5>This was a war fought by Korea and China against Japan</h5>
+      <p> General Toyotomi Hideyoshi is credited with starting the Imjin 
+        War. He declared war on Korea after he had spent two 
+        decades directing campaigns to unite Japan (in Hawaii).
+         After he unified his own land, he set his sights 
+         on China. To gain control of China, General Hideyoshi 
+         went after Korea because it was on the mainland and 
+         neighbored China. General Hideyoshi first sought to 
+         amend relations with Korea after a strained relationship
+          caused by uncontrolled pirate attacks. He sought 
+          permission from Korea for passage into China (Museum). 
+          At this point in history, Korea was a vassal state 
+          of China and therefore refused to aid the Japanese. 
+          (Hawaii). However, King Seonjo of Korea sent envoys
+           to gather information on Japanese plans going forward.
+            Due to unclear reports, the King chose not to send 
+            reinforcements to the Korean Peninsula, leaving 
+            the people on the coast vulnerable. </p>
+    </div>   
+<!--ATTACKS-->
+  <div class="grid-item">
+    <div class="card">
+      <h2>Calculated Attacks of the Imjin War</h2>
+      <h5>The Japanese attacked Korea on two different occasions</h5>
+      <p> The Japanese attacked Busan on April 13th, 1592, with 
+        approximately 16,000 Japanese soldiers. The Japanese 
+        prevailed with little difficulty, starting a seven-year 
+        conflict between them, Korea, and China. In just 15 
+        days of war, the Joseon capital was conquered, but King
+         Seonjo was able to flee to Uiju in northwestern Korea. 
+         The invasion by the Japanese left Korean farmers no 
+         choice but to create their own militias that went up
+          against the Japanese (Hawaii). With the help of the 
+          hundreds of militias, the Korean military was able 
+          to counter the Japanese by intercepting a Japanese 
+          naval ship with supplies. The Korean naval forces 
+          were very skilled and compared to the Japanese. 
+          The Japanese occupation had many more soldiers, 
+          but due to having to deal with pirates for decades, 
+          the Koreans had an advantage on the water. The 
+          Korean Admiral Yi Sun-sin is said to be the first
+           to build an ironclad ship, but there is no proof 
+           because this ship was lost many decades ago. 
+           As the War progressed, the Ming Dynasty sent reinforcements 
+           at the request of King Sonjo because the Japanese had
+            reached the border between Korea and China. 
+            Together, the Chinese and Koreans were able to 
+            run off the Japanese to the South of Korea and negotiate. (museum). </p>
+    </div> 
+<!--The end--> 
+  <div class="grid-item">
+    <div class="card">
+      <h2>The Imjin War is Over</h2>
+      <h5>The events that led to the war ending</h5>
+      <p> When it was time to reach an agreement, 
+        the real demands of Hideyoshi never reached 
+        Emperor Ming. Instead, the Emperor received a 
+        falsified request pleading for forgiveness and 
+        requesting to become a vassal state of China. 
+        (Hawaii). China agreed to these terms, 
+        infuriating Hideyoshi. Thus, Hideyoshi launched his 
+        second attack on Korea again in 1597 with an army
+        of 140,000 soldiers. It is believed that General
+        Hideyoshi was able to win this battle because 
+        Admiral Yi was wrongly incarcerated.
+        Even though they were victorious during 
+        the naval battle, they did not succeed in
+        taking more of Korea because the Chinese 
+        army now backed the Korean military. 
+        Despite his initial success, not long 
+        after Toyotomi Hideyoshi died due to 
+        illness on September 18, 1598. His 
+        successor, Tokugawa Jeyasu, ordered the 
+        Japanese troops to retreat from Korea 
+        three months after Hideyoshi. After 
+        Admiral Yi was reinstated, he was shot and
+        killed at the last battle between Korea 
+        and Japan. Admiral Yi was was hero to his 
+        people and one of the reasons that the 
+        Japanese could never gain control of Korean waters. </p>
+    </div> 
+<!--THE KOREAN WAR-->
+  <div class="grid-item">
+    <div class="card">
+      <h2>Breif History on World War II</h2>
+      <h5>The Influence of Japan</h5>
+      <p>Shortly before WWII, the Japanese started to 
+        colonize Korea again. Once again, the goal is 
+        to take over China, but due to the Imjin War, 
+        they had the knowledge on how to take control of
+        Korea. Once World War II starts, Japan is Allied
+        with Russia and Germany. Later in the war, Japan
+        attacked Pearl Harbor, prompting the United 
+        States to declare war on Japan. After the 
+        Japanese surrender and the war was over, 
+        Korea was divided at the 38th parallel, 
+        with the USSR controlling North Korea and the 
+        United Nations, along with the United States, 
+        controlling South Korea. (KWAR).</p>
+    </div>
+<div class="grid-item">
+    <div class="card">
+      <h2>The Korean War</h2>
+      <h5>A Military Imbalance</h5>
+      <p>The division was done to facilitate the surrender of Japan 
+        and also in order to reunify the Koreas eventually. 
+        North Korea was Communist, and South Korea was a 
+        democracy. Reunification was the goal when North 
+        Korea attacked South Korea on June 25, 1950, 
+        in the name of communism. <br><br>The North Korean 
+        leader Kim Il-sung, attacked with weapons from the 
+        Soviet Union and support from Communist China and 
+        wreaked havoc on South Korea (Cause). South Korea 
+        was not prepared at all for this war and suffered 
+        a lot of damage early on, and continued to do so 
+        until the tables turned when South Korea was able 
+        to take back Seoul. 
+</p>
+    </div>
+    <div class="grid-item">
+    <div class="card">
+      <h2>A Cease Fire</h2>
+      <h5>The War is not Over</h5>
+      <p>A ceasefire was able to be negotiated and brought 
+        back the DMZ at the 38th parallel. Nowadays, 
+        this area is considered one of the most heavily 
+        guarded places in the world. The South Korean 
+        people still speak very fondly of the idea of 
+        reunification.<br><br>After the war ended, the United States helped 
+        South Korea with reconstruction with financial aid, 
+        military aid, and goods. To further help South Korea,
+         teachers and professors were educated in the United 
+         States. These aids allowed South Korea to better itself
+          and create the advancement that has changed the lives
+          of millions today. At present, the United States
+        Military makes up a large part of the South 
+        Korean Military.</p>
+    </div>
+<!--ATTACKS
+</div>
+  <div class="column">
+    <div class="content">
+    <img src="images/IMG_6851.jpg" alt="Speaker Alerts" style="width:100%">
+     <p><b>Tech Observation:</b> On the metro and bus, 
+        there is a speaker that alerts you of the
+         upcoming stop in Korean, Japanese, and English.</p> 
+    </div>
+  </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="images/IMG_6851.jpg" alt="Speaker Alerts" style="width:100%">
+     <p><b>Tech Observation:</b> On the metro and bus, 
+        there is a speaker that alerts you of the
+         upcoming stop in Korean, Japanese, and English.</p> 
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="card">
+      <h2>The Events of the Korean War</h2>
+      <h5>Title description</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p> It could be right around the corner or right around the world.</p>
+    </div>   
+  <div>TBD</div>
+  <div>TBD</div>
+  -->
+  <div class="footer">
+  <h2><a href="https://www.washjeff.edu/student-life/the-magellan-project/scholars-projects/"> 
+    Check out other projects by W&J students</a> Contact <a href = "mailto: kjantsch@washjeff.edu">
+      Kaisha Jantsch</a> for more information!</footer></h2>
+</div>
+</div>
+</html>
